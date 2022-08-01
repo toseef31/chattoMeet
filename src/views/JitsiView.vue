@@ -24,13 +24,13 @@ export default {
   },
   data() {
   return {
-
+       meetingid : ''
     }
   },
   computed: {
           jitsiOptions () {
             return {
-              roomName: '12sss',
+              roomName: this.meetingid,
               noSSL: false,
               userInfo: {
                 email: 'abc@gmail.com',
@@ -118,7 +118,7 @@ export default {
             
         },
 
-        method: {
+        methods: {
         	 onIFrameLoad () {
                this.$refs.jitsiRef.addEventListener('participantJoined', this.onParticipantJoined);
                this.$refs.jitsiRef.addEventListener('videoConferenceLeft', this.onStopCall);
@@ -128,8 +128,21 @@ export default {
                 // alert('join');
               },
             onStopCall(){
-            	alert('hello');
+            	this.$router.push({
+		        name: 'home', 
+		        });
             }  
+        },
+        mounted() {
+        	if(this.$route.params.meetingID == undefined){
+        		
+        	this.meetingid = this.$route.query.meetingID;
+
+	        }else{
+
+	        	this.meetingid = this.$route.params.meetingID;
+
+	        }
         }
 
 };

@@ -9,9 +9,13 @@
   },
   "dependencies": {
     "@mycure/vue-jitsi-meet": "0.0.7",
+    "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
     "bootstrap-vue": "^2.22.0",
     "core-js": "^3.8.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "twilio": "^3.80.0",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1"
   },
