@@ -3,7 +3,10 @@
   <div class="">
     <div class="row mx-0">
      <div class="col-md-4 d-none d-md-block"><div style="overflow: hidden;height:100vh"><img alt="Vue logo" src="../assets/side_bar.jpeg" class="w-100" style="object-fit: cover;"></div></div>
-     <div class="col-md-8"><div :style="cssProps" class="backgroundimg">
+     <div class="col-md-8">
+      <v-easy-camera
+    v-model="picture"></v-easy-camera>
+      <div :style="cssProps" class="backgroundimg" style="display:none">
      	
      	<div class="row  justify-content-center" style="align-items: center;
     height: 100%;">
@@ -31,10 +34,12 @@
 </template>
 
 <script>
+import EasyCamera from 'easy-vue-camera';
 // @ is an alias to /src
 export default {
   name: 'HomeView',
   components: {
+    'v-easy-camera': EasyCamera,
   },
   data() {
   return {
